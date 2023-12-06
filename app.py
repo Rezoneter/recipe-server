@@ -7,6 +7,7 @@ from flask_restful import Api
 from resources.recipe import RecipeListResource
 from resources.recipe import RecipeResource
 from resources.recipe import RecipePublishResource
+from resources.user import UserRegisterResource
 # 기본 구조
 app = Flask(__name__)
 
@@ -19,6 +20,7 @@ api = Api (app)
 api.add_resource( RecipeListResource , '/recipes')
 api.add_resource( RecipeResource ,'/recipes/<int:recipe_id>')
 api.add_resource( RecipePublishResource, '/recipes/<int:recipe_id>/publish')
+api.add_resource( UserRegisterResource, '/user/register')
 
 if __name__ == '__main__':
     app.run()
